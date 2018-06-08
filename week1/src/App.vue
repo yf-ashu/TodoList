@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <div class="block":class="{'hidden':!edit}" ></div>
     <header class="header">
       <div class="container">
-          <router-link to="/" class="nav-link">
-          <span>My Tasks</span>   </router-link>
-          <router-link to="/" class="nav-link">In Progress</router-link>
-          <router-link to="/" class="nav-link">Completed</router-link>
+          <button to="/" class="nav--link" @click="all('all')":class="{'selected':GET_DIS=='all'}">
+          <span>My Tasks</span>   </button>
+          <button to="/" class="nav--link"@click="all('progress')":class="{'selected':GET_DIS=='progress'}">In Progress</button>
+          <button to="/" class="nav--link"@click="all('complete')":class="{'selected':GET_DIS=='complete'}">Completed</button>
       </div>
     </header>
+        <!-- {{edit}} -->
+
     <!-- <router-view/> -->
-  <TodoList :title="test"/>
+  <TodoList />
       <!-- <component :is="currentView"></component> -->
   </div>
 </template>
@@ -20,21 +23,21 @@ import { mapState } from 'vuex'
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'App'
-  ,
   components:{
         TodoList
     },
   data(){
        return {
-      currentView:TodoList
-
     }
   },
-  computed:{
-     ...mapState([
-      'test',
-      // ...
+  methods:{
+ all(value){
+  this.$store.commit('DISPLAY',value) ;
+}
+  },
+   computed:{
+  ...mapGetters([
+      'GET_DIS','edit'
     ])
   }
  
