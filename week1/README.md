@@ -1,21 +1,16 @@
-# week1
+## week1 TodoList
+六角學院前端精神時光屋 第一週
+題目：TodoList
+執行網址：https://yf-ashu.github.io/THE_F2E_Challenge/week1/dist/index#/
+功能：
+- [x] 新增
+- [x] 刪除
+- [x] 修改
+- [x] 清單分成全部、進行中跟已完成
+- [x] 星號排序
+- [ ] 拖拉
 
-> A Vue.js project
+使用技術：Vue、Vuex、Scss
 
-## Build Setup
+UI出處：https://hexschool.github.io/THE_F2E_Design/todolist/#artboard0
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

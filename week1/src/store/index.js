@@ -79,7 +79,9 @@ const mutations = {
      console.log('星星'+starSort)
   },
   ['DELETE'](state,message){
-    state.listData.splice(state.listData.indexOf(message),1)
+    state.listData.splice(state.listData.indexOf(message),1);
+    state.editText=false;
+    console.log(state.editText)
   }
 
 }

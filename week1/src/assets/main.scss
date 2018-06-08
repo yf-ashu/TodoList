@@ -27,14 +27,14 @@ $h) {
 $color--white:#FFFFFF;
 $color--black:#000000;
 $color--gray:#9B9B9B;
-$header__bg:#4A90E2;
-$header__hover:#00408B;
-$button__cancel:#D0021B;
+$header__bg:rgb(125, 201, 211);
+$header__hover:rgb(111, 120, 131);
+$button__cancel:rgb(202, 67, 83);
 $button__plus:#C8C8C8;
-$button__star:#F5A623;
-$list__bg:#F2F2F2;
-$list__bg--selected:#FFF2DC;
-$bg:#E1E1E1;
+$button__star:rgb(25, 0, 255);
+$list__bg:rgb(243, 243, 243);
+$list__bg--selected:rgb(197, 230, 235);
+$bg:rgb(226, 226, 226);
 a,
 a:hover,
 a:active,
@@ -121,11 +121,10 @@ button {
   color: $color--black;
   background-color: $header__bg;
   outline: none;
-}
+  transition: color 0.3s;
 
-.nav--link:hover::after,
-.nav--link:focus::after,
-.selected::after {
+}
+.nav--link::before{
   content: "";
   @include size(160px,
   5px);
@@ -133,10 +132,17 @@ button {
   bottom: 0;
   position: absolute;
   color: $color--white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.nav--link:hover::before,
+.selected::before {
+  opacity: 1;
 }
 
 .nav--link:hover,
-.nav--link:focus,
 .selected {
   color: $color--white;
   font-weight: 500;
@@ -240,12 +246,6 @@ button {
   padding: 24px 72px;
 }
 
-.list--deadline {
-  input {
-    @include size(162px,
-    100%);
-  }
-}
 
 .file--message {
   @include flexLeft();
@@ -273,6 +273,7 @@ button {
     background-color: $button__plus;
     color: $color--white;
     cursor: pointer;
+    margin-left: 16px;
   }
 }
 
@@ -312,6 +313,7 @@ button {
   }
   .cancel {
     color: $button__cancel;
+    background-color: $color--white;
     .line {
       span {
         background-color: $button__cancel;
@@ -372,6 +374,8 @@ button {
 
 .hidden {
   display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .list--complete {
@@ -382,4 +386,11 @@ button {
   position: fixed;
   top: 76px;
   z-index: 500;
+}
+.el-input__inner{
+  display: flex;
+  font-size: 16px;
+}
+.el-input__prefix{
+
 }

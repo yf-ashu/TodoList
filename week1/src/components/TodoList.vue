@@ -19,8 +19,8 @@
               <span>Deadline</span>
             </div>
             <div class="deadline--time subtitle">
-              <input type="date" v-model="input.date">
-              <input type="time"v-model="input.time">
+              <el-date-picker  v-model="input.date" format="yyyy-MM-dd" type="date" placeholder="yyyy/mm/dd"></el-date-picker>
+              <el-time-select  v-model="input.time" format="hh:mm" placeholder="hh:mm"></el-time-select>
             </div>
           </div>
           <div class="list--file">
@@ -29,8 +29,9 @@
               <span>File</span>
             </div>
             <div class="file--message subtitle">
+              <span >{{ input.file }}</span>
               <label for="file">+</label>
-              <input type="file" name="" id="file" > 
+              <input type="file" name="" id="file" @change="getFiles($event, input)"> 
             </div>
           </div>
           <div class="list--comment">
@@ -81,6 +82,7 @@
           <i class="far fa-calendar-alt"></i>
           <span>{{todo.date}}</span>
           <i class="far fa-file"></i>
+          <span>{{todo.file}}</span>
           <i class="far fa-comment"></i>
           <span>{{todo.command}}</span>
         </div>
@@ -94,8 +96,8 @@
               <span>Deadline</span>
             </div>
             <div class="deadline--time subtitle">
-              <input type="date" :placeholder="todo.date">
-              <input type="time" :placeholder="todo.date">
+              <el-date-picker  v-model="todo.date" type="date" placeholder="yyyy/mm/dd"></el-date-picker>
+              <el-time-select  v-model="todo.time" format="hh:mm" placeholder="hh:mm"></el-time-select>
             </div>
           </div>
           <div class="list--file">
@@ -105,11 +107,11 @@
             </div>
             <div class="file--message subtitle">
               <div class="msg"> 
-                <span>20180514.zip</span>
+                <span>{{todo.file}}</span>
                 <span>uploaded yesterday</span>
               </div>
-              <label for="file">+</label>
-              <input type="file" name="" id="file" >            
+              <label for="fileUpdate">+</label>
+              <input type="file"  id="fileUpdate" @change="getFiles($event, todo)">            
               </div>
           </div>
           <div class="list--comment">
@@ -154,6 +156,7 @@ export default {
       title:'',
       date:'',
       time:'',
+      file:'',
       command:'',
       updateTime:'',
       star:false,
@@ -174,6 +177,7 @@ export default {
       title:'',
       date:'',
       time:'',
+      file:'',
       command:'',
       updateTime:'',
       star:false,
@@ -200,6 +204,7 @@ export default {
         value.title=this.cacheData.title;
         value.date=this.cacheData.date;
         value.time=this.cacheData.time;
+        value.file=this.cacheData.file;
         value.command=this.cacheData.command;
         this.cacheData='';
       }
@@ -212,7 +217,10 @@ export default {
    },
    deleteTodo(todo){
      this.$store.commit('DELETE',todo);
-   }
+   },
+    getFiles(e, todo) {
+        todo.file = e.target.files[0].name;
+      }
   
   },
   computed:{
