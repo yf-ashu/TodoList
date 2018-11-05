@@ -11,6 +11,6 @@
 - [ ] 拖拉
 
 使用技術：Vue、Vuex、Scss
-
+https://yf-ashu.github.io/TodoList/react-todolist-redux/dist/index.html
 UI出處：https://hexschool.github.io/THE_F2E_Design/todolist/#artboard0
 
