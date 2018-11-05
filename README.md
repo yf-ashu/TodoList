@@ -1,16 +1,12 @@
-## week1 TodoList
-六角學院前端精神時光屋 第一週
-題目：TodoList
-執行網址：https://yf-ashu.github.io/TodoList/vue-todolist-vuex/dist/index#/
-功能：
-- [x] 新增
-- [x] 刪除
-- [x] 修改
-- [x] 清單分成全部、進行中跟已完成
-- [x] 星號排序
-- [ ] 拖拉
+# TodoList
 
+## TodoList - Vue
 使用技術：Vue、Vuex、Scss
-https://yf-ashu.github.io/TodoList/react-todolist-redux/dist/index.html
+
+執行網址：https://yf-ashu.github.io/TodoList/vue-todolist-vuex/dist/index#/
 UI出處：https://hexschool.github.io/THE_F2E_Design/todolist/#artboard0
+
+## TodoList - React
+使用技術：React、Redux、Scss
+https://yf-ashu.github.io/TodoList/react-todolist-redux/dist/index.html
 
