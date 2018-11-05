@@ -1,7 +1,7 @@
 ## week1 TodoList
 六角學院前端精神時光屋 第一週
 題目：TodoList
-執行網址：https://yf-ashu.github.io/THE_F2E_Challenge/week1/dist/index#/
+執行網址：https://yf-ashu.github.io/TodoList/vue-todolist-vuex/dist/index#/
 功能：
 - [x] 新增
 - [x] 刪除
