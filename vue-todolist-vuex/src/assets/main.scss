@@ -31,9 +31,9 @@ $header__bg:rgb(125, 201, 211);
 $header__hover:rgb(111, 120, 131);
 $button__cancel:rgb(202, 67, 83);
 $button__plus:#C8C8C8;
-$button__star:rgb(25, 0, 255);
+$button__star:rgb(255, 166, 107);
 $list__bg:rgb(243, 243, 243);
-$list__bg--selected:rgb(197, 230, 235);
+$list__bg--selected:rgb(233, 245, 245);
 $bg:rgb(226, 226, 226);
 a,
 a:hover,
@@ -154,7 +154,7 @@ button {
   margin: 8px 0;
   border-radius: 5px;
   overflow: hidden;
-  &.topBlock {
+  &.task__list--top {
     margin: 24px 0;
   }
 }

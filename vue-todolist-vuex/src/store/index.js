@@ -1,19 +1,16 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex)
 
 const state = {
   listData: [],
-  test:"123456",
   hidden:true,
   display:'all',
   editText:false
 }
 const getters = {
   ['GET_TODO'](state) {
-    console.log(state.listData)
-    console.log(state.display)
     switch(state.display){
       case 'all':
       return state.listData;
@@ -24,7 +21,6 @@ const getters = {
     }
   },
   ['GET_DIS'](state) {
-    // console.log(state.listData)
     return state.display;
   },
   star(state){
@@ -40,10 +36,12 @@ const getters = {
     return state.editText;
   }
 }
+
 const actions = {
  
 
 }
+
 const mutations = {
   ['INPUT_TODO'](state, message) {
     state.listData.unshift(message);
@@ -57,26 +55,22 @@ const mutations = {
   },
   ['DISPLAY'](state,message){
     state.display=message;
-    console.log(message)
   },
-  ['EDIT'](state,message){
+  ['EDIT'](state){
     state.editText=!state.editText;
-    console.log(state.editText)
   },
-  ['STARCHANGE'](state,message){
-    let starSort = state.listData.sort(function (a, b) {
+  ['STARCHANGE'](state){
+    state.listData.sort(function (a) {
       return  a.star ? -1 : 1;
      });
-     console.log('星星變更'+starSort)
   },
-  ['LISTORIGINAL'](state,message){
-    let starSort = state.listData.sort(function (a, b) {
+  ['LISTORIGINAL'](state){
+    state.listData.sort(function (a, b) {
       return a.updateTime > b.updateTime  ? 1 : -1;
      });
-    let starSort2 = state.listData.sort(function (a, b) {
+    state.listData.sort(function (a) {
       return a.star ? -1 : 1;
      });  
-     console.log('星星'+starSort)
   },
   ['DELETE'](state,message){
     state.listData.splice(state.listData.indexOf(message),1);
